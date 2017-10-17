@@ -1,0 +1,15 @@
+1.  stdint.h is a header file that allows the use of fixed width integer types.
+2.  The point of using fixed width integer types is to make sure that each type has always exactly the same size indepedently 
+of the machine running the code. In this case, this is needed to represent the information contained on a BMP file on its first
+53 bytes.
+3.  BYTE is 1 byte; DWORD is 4 bytes; LONG is 4 bytes; WORD is 2 bytes.
+4.  The first two bytes represent the type of the file. The BMP file starts with 'BM' in ASCII.
+5.  bfSize is the size of the BMP file in bytes; biSize is the size of BITMAPINFOHEADER.
+6.  If biHeight is negative, the bitmap is a top-down DIB (device indepedent Bitmap) and its origin is the upper left corner.
+7.  biBitCount
+8.  If the user has no permission to open the files or there is no more space to save the file; Besides, the fopen() function
+gets a pointer so if one tries to dereference a NULL pointer a segmentation fault happens.
+9.  The third argument of fread() indicates the quantity of RGBTRIPLE that it reads at a time (pixel by pixel).
+10. 3
+11. Allows one to rewind or fast-forward within a file.
+12. SEEK_CUR - current position of the file pointer; to use with the fseek() function.

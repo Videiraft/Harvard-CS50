@@ -1,0 +1,4 @@
+0. Board must be between 3 x 3 and 9 x 9, inclusive.
+1. 2D array
+2. function greet
+3. init, draw, move and won

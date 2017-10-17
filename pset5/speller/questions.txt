@@ -1,0 +1,35 @@
+0.  What is pneumonoultramicroscopicsilicovolcanoconiosis?
+        A lung disease caused by inhaling very fine ash and sand dust
+
+
+1.  According to its man page, what does getrusage do?
+        It is used to examine the resource usage of a process.
+
+
+2.  Per that same man page, how many members are in a variable of type struct rusage?
+        16
+
+
+3.  Why do you think we pass before and after by reference (instead of by value) to calculate, even though we’re 
+not changing their contents?
+        Passing it by reference makes it possible to calculate the time without copying the variable, which would make the proccess
+        lasting a little longer in time. In fact, the function 'calculate' only cares about two members of the whole 16 that are in 
+        a variable of type struct rusage.
+
+
+4.  Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, 
+convince us that you indeed understand how that function’s for loop works.
+        The for loop iterates each character at a time, through all the file. For each character it checks if it is a letter or 
+        apostrophe and adds it to the 'word' array until it finds the word's end - i.e. until the next character found is no letter 
+        or apostrophe. In that case it adds a '\0' to the end of the array, updates the word counter and checks if the word is
+        misspelled or not. It also ignores words with numbers and words bigger than 45 characters.
+
+
+5.  Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string 
+like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+        The fscanf function with  format string like "%s" would read every character until it finds a space. That would include
+        commas, digits, etc... With fgetc we can discriminate all we want and all we perceive as words.
+
+
+6.  Why do you think we declared the parameters for check and load as const (which means "constant")?
+        In this case there is no way for the function to change the parameters.
